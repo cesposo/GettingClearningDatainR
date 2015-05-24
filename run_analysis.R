@@ -1,15 +1,15 @@
 library(plyr)
 
-test <- read.table(file = 'C:/Users/Blah/Dropbox/Coursers/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/test/X_test.txt')
-test_lab <- read.table(file = 'C:/Users/Blah/Dropbox/Coursers/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/test/y_test.txt')
-subject_test <- read.table(file = 'C:/Users/Blah/Dropbox/Coursers/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/test/subject_test.txt')
+test <- read.table(file = 'C:/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/test/X_test.txt')
+test_lab <- read.table(file = 'C:/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/test/y_test.txt')
+subject_test <- read.table(file = 'C:/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/test/subject_test.txt')
 
-training <- read.table('C:/Users/Blah/Dropbox/Coursers/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/train/X_train.txt')
-training_lab <- read.table('C:/Users/Blah/Dropbox/Coursers/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/train/y_train.txt')
-subject_training <- read.table(file = 'C:/Users/Blah/Dropbox/Coursers/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt')
+training <- read.table('C:/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/train/X_train.txt')
+training_lab <- read.table('C:/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/train/y_train.txt')
+subject_training <- read.table(file = 'C:/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt')
 
-features <- read.table('C:/Users/Blah/Dropbox/Coursers/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/features.txt', colClasses = 'character')
-actvity_lab <- read.table('C:/Users/Blah/Dropbox/Coursers/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/activity_labels.txt', col.names = c('ID', 'Activity'))
+features <- read.table('C:/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/features.txt', colClasses = 'character')
+actvity_lab <- read.table('C:/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/activity_labels.txt', col.names = c('ID', 'Activity'))
 
 
 # Merging the training and testing set
@@ -49,4 +49,4 @@ names(Extraction) <- make.names(names(Extraction))
 
 
 Extraction_1 = ddply(Extraction, c("Subject","Activity"), numcolwise(mean))
-write.table(Extraction_1, file = "C:/Users/Blah/Dropbox/Coursers/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/Extraction_1.txt", row.names = FALSE)
+write.table(Extraction_1, file = "C:/Coursera Classes/Getting and Cleaning Data/Project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/Extraction_1.txt", row.names = FALSE)
